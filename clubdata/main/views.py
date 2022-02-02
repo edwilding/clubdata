@@ -7,8 +7,6 @@ from .serializers import ClubSerializer, MatchSerializer
 from django.db.models import Q
 from django.shortcuts import get_object_or_404
 
-from django_filters import rest_framework as filters
-
 from .models import Club, Match
 
 
@@ -21,6 +19,8 @@ class StandardResultsSetPagination(PageNumberPagination):
 class ClubListView(ListAPIView):
     queryset = Club.objects.all().order_by('name')
     serializer_class = ClubSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['name']
 
 
 class MatchListView(ListAPIView):
