@@ -87,6 +87,7 @@ const TeamLookup = () => {
         <div className="row justify-content-center">
           <div className="col-lg-5">
             <AsyncSelect
+              placeholder="Start Typing a Team Name..."
               className="my-1"
               noOptionsMessage={() => 'No Clubs Found :('}
               loadOptions={loadOptions}
@@ -96,6 +97,7 @@ const TeamLookup = () => {
           <div className="col-lg-2 justify-content-center"><h1><span className="font-weight-bold text-light">Vs.</span></h1></div>
           <div className="col-lg-5">
             <AsyncSelect
+              placeholder="Start Typing a Team Name..."
               className="my-1"
               noOptionsMessage={() => 'No Clubs Found :('}
               loadOptions={loadOptions}
